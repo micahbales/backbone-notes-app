@@ -1,5 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Vollkorn+SC|Lora');
+
+* { transition: background-color, color .2s ease-in }
+
+body {
+  background-color: #579CC9;
+  font-family: 'Lora';
+}
+
+h1, h2, h3, h4, h5, h6, p, span, label {
+  color: #fefefe;
+}
+
+h1, h2, h3, h4, h5, h6, button, a {
+  font-family: 'Vollkorn SC';
+}
+
+input, textarea {
+  border-radius: 5px;
+  text-align: center;
+}
+
+input {
+  padding: 2px;
+}
+
+textarea {
+  padding: 10px 0px;
+}
+
+.logo {
+  max-width: 150px;
+}
+
 .text-center {
   text-align: center;
+}
+
+.page-header {
+  border: 0px;
+}
+
+.well {
+  background-color: #3385BA;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #1072B3;
+}
+
+.btn-danger {
+  background-color: #DE7C00;
+}
+
+.btn-danger:hover {
+  background-color: #FF9208;
+  border: 1px solid #c2c2c2;
 }
 
 .create-note-button-wrapper a {
@@ -31,17 +87,24 @@
   margin-bottom: 12px;
 }
 
+.save, .cancel, .edit, .delete {
+  width: 80px;
+}
+
 .save, .cancel {
   margin-top: 10px;
-  width: 70px;
 }
 
 .note {
-  border: 2px solid #eee;
+  border: 1px solid #3385BA;
   border-radius: 5px;
   -webkit-box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
   -moz-box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
   box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
   margin: 20px 0px;
-  padding: 10px;
+  padding: 10px 5%;
+}
+
+.note__group {
+  margin-top: 10px;
 }

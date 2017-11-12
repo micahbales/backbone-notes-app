@@ -3,22 +3,26 @@
 <head>
   <title>Backbone Notes App</title>
   <!-- Load Bootstrap & Local Styles -->
-  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 
   <div class="container">
-    <div class="page-header text-center">
-      <h1>Backbone Notes App</h1>
-      <p class="sub-header">
-        Write some notes, and save them in Backbone Local storage! What's not
-        to love?
-      </p>
+    <div class="page-header text-center row">
+      <div class="col-md-12">
+        <img src="./img/backbone-logo.png" alt="Backbone Notes App" class="logo">
+        <h1>Backbone Notes App</h1>
+        <p class="sub-header">
+          Write some notes, and save them in Backbone Local storage! What's not
+          to love?
+        </p>
+      </div>
+
     </div>
 
     <div class="row">
-      <div class="col-xs-10 col-sm-4 col-sm-offset-4" id="template-body">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" id="template-body">
         <!-- Rendered Templates Go Here -->
       </div>
     </div>
@@ -29,11 +33,11 @@
   <!-- Index Template -->
   <script type="text/template" id="indexTemplate">
     <div class="create-note-button-wrapper row text-center">
-        <a class="btn btn-primary col-xs-10 col-sm-4" href="#note/new">Create a New Note</a>
+        <a class="btn btn-primary col-xs-10 col-sm-6" href="#note/new">Create a New Note</a>
     </div>
 
     <% if (_.isEmpty(notes)){ %>
-      <div class="alert">
+      <div class="alert text-center">
         <p>You haven't created any notes yet. Go ahead!</p>
       </div>
     <% } %>
@@ -41,10 +45,10 @@
     <% _.each(notes, (note) => { %>
       <div class="note text-center">
         <h4 class="note__title"><%= note.title %></h4>
-        <p class="note__message well"><%= note.message %></p>
+        <p class="note__message well center-block"><%= note.message %></p>
         <div class="note__buttons">
-          <a class="btn btn-xs btn-info" href="#note/<%= note.id %>/edit">Edit</a>
-          <a class="btn btn-xs btn-danger" href="#note/<%= note.id %>/delete">Delete</a>
+          <a class="edit btn btn-primary" href="#note/<%= note.id %>/edit">Edit</a>
+          <a class="delete btn btn-danger" href="#note/<%= note.id %>/delete">Delete</a>
         </div>
       </div>
     <% }); %>
@@ -52,23 +56,23 @@
 
   <!-- Create & Edit Form Template -->
   <script type="text/jst" id="formTemplate">
-    <div class="note-form row text-center">
+    <div class="note row text-center">
       <div class="col-xs-10 col-xs-offset-1">
-        <div class="note-form__header">
+        <div>
           <h3><%= message || "Create a Note:" %></h3>
         </div>
         <form>
-          <div class="note-form__group">
-            <label for="note-form__title">Title:</label><br>
-            <input type="text" name="title" class="note-form__title" placeholder="Note to Self" value="<%= title %>">
+          <div class="note__group">
+            <label for="note__title">Title:</label><br>
+            <input type="text" name="title" class="note__title" placeholder="Note to Self" value="<%= title %>">
           </div>
-          <div class="note-form__group">
-            <label for="note-form__message">Message:</label><br>
-            <textarea placeholder="Pick up Broccoli..." name="message" class="note-form__message"><%= message %></textarea>
+          <div class="note__group">
+            <label for="note__message">Message:</label><br>
+            <textarea placeholder="Pick up Broccoli..." name="message" class="note__message"><%= message %></textarea>
           </div>
-          <div class="note-form__group">
+          <div className="note__buttons">
             <button type="submit" class="save btn btn-primary">Save</button>
-            <a href="#notes/index" class="cancel btn btn-secondary">Cancel</button>
+            <a href="#notes/index" class="cancel btn btn-danger">Cancel</a>
           </div>
         </form>
       </div>
@@ -80,9 +84,9 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
 
   <!-- Load Local Scripts -->
   <script src="js/notes_router.js"></script>
