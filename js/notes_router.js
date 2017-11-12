@@ -7,6 +7,7 @@ APP.NotesRouter = Backbone.Router.extend({
   routes: {
     "notes/index": "index",
     "note/new": "create",
+    "note/:id/delete": "delete"
   },
   $container: $('#template-body'),
   initialize() {
@@ -26,5 +27,10 @@ APP.NotesRouter = Backbone.Router.extend({
       model: new APP.NoteModel()
     });
     this.$container.html(view.render().el);
+  },
+  delete(id) {
+    const note = this.collection.get(id);
+    note.destroy();
+    Backbone.history.navigate("notes/index", {trigger: true});
   }
 });
