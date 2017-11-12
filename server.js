@@ -6,5 +6,5 @@ const serveStatic = require('serve-static');
 app.use(serveStatic(__dirname));
 
 app.listen(8000, () => {
-  console.log('Express Server Listen on Port 8000');
+  console.log('Express Server Listening on Port 8000');
 });

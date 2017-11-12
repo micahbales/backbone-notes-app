@@ -27,7 +27,6 @@
   <!-- *** Templates Go Here: *** -->
 
   <!-- Index Template -->
-
   <script type="text/template" id="indexTemplate">
     <div class="create-note-button-wrapper row text-center">
         <a class="btn btn-primary col-xs-10 col-sm-4" href="#note/new">Create a New Note</a>
@@ -40,7 +39,6 @@
     <% } %>
 
     <% _.each(notes, (note) => { %>
-      <% console.log(note) %>
       <div class="note text-center">
         <h4 class="note__title"><%= note.title %></h4>
         <p class="note__message well"><%= note.message %></p>
@@ -62,7 +60,7 @@
         <form>
           <div class="note-form__group">
             <label for="note-form__title">Title:</label><br>
-            <input type="text" name="title" class="note-form__title" placeholder="Note to Self" value="<%= message %>">
+            <input type="text" name="title" class="note-form__title" placeholder="Note to Self" value="<%= title %>">
           </div>
           <div class="note-form__group">
             <label for="note-form__message">Message:</label><br>
@@ -91,6 +89,7 @@
   <script src="js/note_model.js"></script>
   <script src="js/views/note_index.js"></script>
   <script src="js/views/note_new.js"></script>
+  <script src="js/views/note_edit.js"></script>
   <script>
     const app = new APP.NotesRouter();
   </script>
