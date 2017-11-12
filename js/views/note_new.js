@@ -15,7 +15,7 @@ APP.NoteNew = Backbone.View.extend({
     // Use Values from the Form to Update Models
     this.model.set({
       title: this.$el.find('input[name=title]').val(),
-      message: this.$el.find('input[name=message]').val()
+      message: this.$el.find('textarea[name=message]').val()
     });
 
     if (this.model.isValid()) {

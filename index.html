@@ -9,7 +9,7 @@
 <body>
 
   <div class="container">
-    <div class="page-header center-text">
+    <div class="page-header text-center">
       <h1>Backbone Notes App</h1>
       <p class="sub-header">
         Write some notes, and save them in Backbone Local storage! What's not
@@ -29,7 +29,7 @@
   <!-- Index Template -->
 
   <script type="text/template" id="indexTemplate">
-    <div class="create-note-button-wrapper row center-text">
+    <div class="create-note-button-wrapper row text-center">
         <a class="btn btn-primary col-xs-10 col-sm-4" href="#note/new">Create a New Note</a>
     </div>
 
@@ -38,11 +38,23 @@
         <p>You haven't created any notes yet. Go ahead!</p>
       </div>
     <% } %>
+
+    <% _.each(notes, (note) => { %>
+      <% console.log(note) %>
+      <div class="note text-center">
+        <h4 class="note__title"><%= note.title %></h4>
+        <p class="note__message well"><%= note.message %></p>
+        <div class="note__buttons">
+          <a class="btn btn-xs btn-info" href="#note/<%= note.id %>/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" href="#note/<%= note.id %>/delete">Delete</a>
+        </div>
+      </div>
+    <% }); %>
   </script>
 
   <!-- Create & Edit Form Template -->
   <script type="text/jst" id="formTemplate">
-    <div class="note-form row center-text">
+    <div class="note-form row text-center">
       <div class="col-xs-10 col-xs-offset-1">
         <div class="note-form__header">
           <h3><%= message || "Create a Note:" %></h3>
@@ -50,11 +62,11 @@
         <form>
           <div class="note-form__group">
             <label for="note-form__title">Title:</label><br>
-            <input type="text" class="note-form__title" placeholder="Note to Self" value="<%= message %>">
+            <input type="text" name="title" class="note-form__title" placeholder="Note to Self" value="<%= message %>">
           </div>
           <div class="note-form__group">
             <label for="note-form__message">Message:</label><br>
-            <textarea placeholder="Pick up Broccoli..." class="note-form__message"><%= message %></textarea>
+            <textarea placeholder="Pick up Broccoli..." name="message" class="note-form__message"><%= message %></textarea>
           </div>
           <div class="note-form__group">
             <button type="submit" class="save btn btn-primary">Save</button>

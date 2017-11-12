@@ -1,4 +1,4 @@
-.center-text {
+.text-center {
   text-align: center;
 }
 
@@ -8,6 +8,9 @@
   font-size: 18px;
   font-weight: bold;
   padding: 12px;
+  -webkit-box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
+  box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
 }
 
 .note-form__group {
@@ -31,4 +34,14 @@
 .save, .cancel {
   margin-top: 10px;
   width: 70px;
+}
+
+.note {
+  border: 2px solid #eee;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
+  box-shadow: 4px 6px 14px -5px rgba(0,0,0,0.75);
+  margin: 20px 0px;
+  padding: 10px;
 }
