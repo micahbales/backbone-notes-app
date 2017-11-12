@@ -1,10 +1,34 @@
-.page-header, .create-note {
+.center-text {
   text-align: center;
 }
 
-.create-note button {
+.create-note-button-wrapper a {
   height: 50px;
   width: 100%;
   font-size: 18px;
   font-weight: bold;
+  padding: 12px;
+}
+
+.note-form__group {
+  margin: 15px 0px;
+}
+
+.new-note {
+  text-align: center;
+}
+
+.new-note__message {
+  width: 320px;
+  height: 100px;
+  clear: both;
+}
+
+.new-note h3 {
+  margin-bottom: 12px;
+}
+
+.save, .cancel {
+  margin-top: 10px;
+  width: 70px;
 }
