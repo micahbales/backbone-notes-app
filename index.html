@@ -18,13 +18,19 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12" id="main-content">
-        <!-- populate rendered templates here -->
+      <div class="col-xs-10 col-sm-4 col-sm-offset-4" id="template-body">
+        <!-- Rendered Templates Go Here -->
       </div>
     </div>
   </div>
 
   <!-- *** Templates Go Here: *** -->
+
+  <script type="text/template" id="indexTemplate">
+    <div class="create-note row">
+        <button class="btn btn-primary col-xs-10 col-sm-4">Create a New Note</button>
+    </div>
+  </script>
 
   <!-- Load Backbone Dependencies -->
   <script
@@ -35,5 +41,12 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
 
+  <!-- Load Local Scripts -->
+  <script src="js/notes_router.js"></script>
+  <script src="js/note_model.js"></script>
+  <script src="js/views/note_index.js"></script>
+  <script>
+    var app = new APP.NotesRouter();
+  </script>
 </body>
 </html>
